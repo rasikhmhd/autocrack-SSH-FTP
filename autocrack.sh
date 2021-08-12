@@ -10,7 +10,7 @@ live()
         exit
     fi  
 }
-#function to scan port 21 and 22
+#function to scan port 21 and 22 using nmap
 scan()
 {
     nmap -sS -p 21 $ip -oN tmp_ftp_scan.txt > /dev/null 
@@ -26,7 +26,7 @@ if [ ! -z $path ]; then
 wordlist=$path
 else wordlist=/usr/share/wordlists/rockyou.txt
 fi
-#function to crack FTP & SSH password
+#function to crack FTP & SSH password using hydra 
 crack()
 {
     if [[ ! -z "$ftp_stat" && "$ssh_stat" ]]; then

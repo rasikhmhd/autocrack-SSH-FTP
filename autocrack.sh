@@ -1,5 +1,5 @@
 #!/bin/bash 
-read -p "ether IP or domain : " ip
+read -p "enter IP or domain : " ip
 #function to identify the target system is alive or not
 live()
 {

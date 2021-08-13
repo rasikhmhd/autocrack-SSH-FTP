@@ -8,4 +8,4 @@ Also user can use custom or default wordlist for the attack
 ```bash
 ./autocrack.sh
 ```
-# process completed
+

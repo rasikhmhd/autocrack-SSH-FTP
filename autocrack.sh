@@ -10,7 +10,7 @@ live()
         exit
     fi  
 }
-#function to scan port 21 and 22 using nmap#
+#function to scan port 21 and 22 using nmap
 scan()
 {
     nmap -sS -p 21 $ip -oN tmp_ftp_scan.txt > /dev/null 

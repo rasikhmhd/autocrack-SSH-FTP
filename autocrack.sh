@@ -79,7 +79,8 @@ remove()
     rm hydra.restore
     echo "restore file removed"
     fi
-}#calling all functions
+}
+#calling all functions
 remove
 live
 scan

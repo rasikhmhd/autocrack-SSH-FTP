@@ -15,10 +15,10 @@ scan()
 {
     nmap -sS -p 21 $ip -oN tmp_ftp_scan.txt > /dev/null 
     ftp_stat=$(cat tmp_ftp_scan.txt | grep open | cut -d " " -f 1)
-    echo $ftp_stat 
+  
     nmap -sS -p 22 $ip -oN tmp_ssh_scan.txt > /dev/null
     ssh_stat=$(cat tmp_ssh_scan.txt | grep open | cut -d " " -f 1)
-    echo $ssh_stat 
+    
 }
 echo "enter the path to custom wordlist or for defult press enter"
 read path
